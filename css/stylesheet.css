@@ -99,7 +99,7 @@ body {
     padding: 9px 5px 9px 5px;
 }
 
-.nav-button.current {
+.nav-current {
     color: red;
     font-weight: 700;
 }
