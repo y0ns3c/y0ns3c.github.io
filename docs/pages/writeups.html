@@ -24,7 +24,16 @@
 
 
 	<div class="page-content">
-	<iframe src="https://github.com/y0ns3c/CTF-Writeups" style="border-width:0" width="80%" height="400" frameborder="0" scrolling="no"></iframe>
+	<iframe id="ctfWriteups" src=""></iframe>
+	<script>
+		fetch('https://api.github.com/repos/y0ns3c/CTF-Writeups')
+			.then(function(response) {
+				return response.json();
+			}).then(function(data) {
+				var iframe = document.getElementById('ctfWriteups');
+				iframe.src = 'data:text/html;base64,' + encodeURIComponent(data['content']);
+			});
+	</script>
 	</div>
 
 
