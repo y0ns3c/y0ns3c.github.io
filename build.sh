@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 SRC=src
-OUT=build
+OUT=docs
 PAGES=${SRC}/pages
 TEMPLATE=${SRC}/assets/template.html
 PAGE_MAKER=./make_page.py
