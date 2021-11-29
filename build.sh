@@ -11,6 +11,7 @@ build() {
     cp -rT "$1" "${1/$SRC/$OUT}"
 }
 
+mkdir -p "$OUT"
 
 # Basic copy paste
 build "${SRC}/.nojekyll"
@@ -19,6 +20,9 @@ for f in "${SRC}"/*; do
         build "$f"
     fi
 done
+
+# Remove template from build output
+rm "${TEMPLATE/$SRC/$OUT}"
 
 # Build pages
 mkdir -p "${PAGES/$SRC/$OUT}"
