@@ -25,7 +25,9 @@ done
 rm "${TEMPLATE/$SRC/$OUT}"
 
 # Build pages
-mkdir -p "${PAGES/$SRC/$OUT}"
 for page in "$PAGES"/*; do
-    "$PAGE_MAKER" "$TEMPLATE" "$page" "${page/$SRC/$OUT}"
+    if [[ -f "$page" ]]; then
+        echo "Building page: $page"
+        "$PAGE_MAKER" "$TEMPLATE" "$page" "${page/$PAGES/$OUT}"
+    fi
 done

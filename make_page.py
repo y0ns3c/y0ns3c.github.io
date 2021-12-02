@@ -14,6 +14,7 @@ with open(arg_template, encoding="utf-8") as f_template:
 
 head_elems = []
 content_elems = []
+# Extract head and content elements
 with open(arg_src, encoding="utf-8") as f_src:
     tag_section = ''
     for line in f_src:
@@ -33,6 +34,13 @@ with open(arg_src, encoding="utf-8") as f_src:
                 content_elems.append(line)
 
     content_elems.pop()
+
+# Set nav-current
+page = arg_src.split('/')[-1]
+for index, line in enumerate(template):
+    if "nav-button" in line and page in line:
+        template[index] = line.replace("nav-button", "nav-current")
+
 
 with open(arg_dest, "w", encoding="utf-8") as f_dest:
     for line in template:
