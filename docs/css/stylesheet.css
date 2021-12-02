@@ -145,3 +145,7 @@ body {
 	-webkit-justify-content: center;
 	justify-content: center;
 }
+
+.text-gap {
+	height: 10px;
+}
