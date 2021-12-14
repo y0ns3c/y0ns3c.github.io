@@ -21,6 +21,10 @@ body {
 	margin: 0;
 }
 
+p {
+	font-size: 20px;
+}
+
 .header-section {
 	display: block;
 	background-color: #aac3c3;
